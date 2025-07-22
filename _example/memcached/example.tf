@@ -49,11 +49,11 @@ module "memcached" {
   num_cache_nodes                          = 2
   subnet_ids                               = module.subnet.public_subnet_id
   availability_zones                       = ["us-east-1a", "us-east-1b"]
-  route53_record_enabled         = false
-  ssm_parameter_endpoint_enabled = false
-  dns_record_name                = "prod"
-  route53_ttl                    = "300"
-  route53_type                   = "CNAME"
-  route53_zone_id                = "SERFxxxx6XCsY9Lxxxxx"
+  route53_record_enabled                   = false
+  ssm_parameter_endpoint_enabled           = false
+  dns_record_name                          = "prod"
+  route53_ttl                              = "300"
+  route53_type                             = "CNAME"
+  route53_zone_id                          = "SERFxxxx6XCsY9Lxxxxx"
 
 }

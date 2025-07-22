@@ -126,7 +126,7 @@ resource "random_password" "auth_token" {
 }
 
 resource "aws_elasticache_replication_group" "cluster" {
-  count = var.enable && var.cluster_replication_enabled ? 1 : 0
+  count                      = var.enable && var.cluster_replication_enabled ? 1 : 0
   engine                     = var.engine
   replication_group_id       = module.labels.id
   description                = var.replication_group_description
