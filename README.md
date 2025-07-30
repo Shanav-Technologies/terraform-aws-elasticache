@@ -18,7 +18,7 @@ This Terraform module creates structured elasticache for aws resources with spec
 Example:memcached
 ```hcl
 module "memcached" {
-  source = "git::https://github.com/shanav-tech/terraform-aws-elasticache.git?ref=v1.0.0"
+  source = "git::https://github.com/Shanav-Technologies/terraform-aws-elasticache.git?ref=v1.0.0"
 
   name        = "memcached"
   environment = "test"
@@ -41,7 +41,7 @@ module "memcached" {
   subnet_ids                               = module.subnet.public_subnet_id
   availability_zones                       = ["eu-west-1a", "eu-west-1b"]
   extra_tags = {
-    Application = "shanav-tech"
+    Application = "Shanav-Technologies"
   }
 
   route53_record_enabled         = false
@@ -58,7 +58,7 @@ module "memcached" {
 Example:redis
 ```hcl
 module "redis" {
-  source = "git::https://github.com/shanav-tech/terraform-aws-elasticache.git?ref=v1.0.0"
+  source = "git::https://github.com/Shanav-Technologies/terraform-aws-elasticache.git?ref=v1.0.0"
 
   name        = "redis"
   environment = "test"
@@ -95,7 +95,7 @@ module "redis" {
     }
   ]
   extra_tags = {
-    Application = "shanav-tech"
+    Application = "Shanav-Technologies"
   }
 
   route53_record_enabled         = false
@@ -110,7 +110,7 @@ module "redis" {
 Example:redis-cluster
 ```hcl
 module "redis-cluster" {
-  source = "git::https://github.com/shanav-tech/terraform-aws-elasticache.git?ref=v1.0.0"
+  source = "git::https://github.com/Shanav-Technologies/terraform-aws-elasticache.git?ref=v1.0.0"
 
   name        = "redis-cluster"
   environment = "test"
@@ -133,7 +133,7 @@ module "redis-cluster" {
   snapshot_retention_limit    = 7
   automatic_failover_enabled  = true
   extra_tags = {
-    Application = "shanav-tech"
+    Application = "Shanav-Technologies"
   }
 
 
@@ -154,21 +154,21 @@ Please ensure you specify the correct 'source' path for the module.
 - `environment`: Environment (e.g. `prod`, `dev`, `staging`)..
 - `label_order`: Label order, e.g. `name`,`application`.
 - `enabled`: Enable or disable of elasticache.
-- `managedby`:  ManagedBy, eg 'shanav-tech'.
+- `managedby`:  ManagedBy, eg 'Shanav-Technologies'.
 - `engine` : The name of the cache engine to be used for the clusters in this replication group. e.g. redis.
 
 ## Module Outputs
 - This module currently does not provide any outputs.
 
 # Examples
-For detailed examples on how to use this module, please refer to the '[example](https://github.com/shanav-tech/terraform-aws-elasticache/tree/master/example)' directory within this repository.
+For detailed examples on how to use this module, please refer to the '[example](https://github.com/Shanav-Technologies/terraform-aws-elasticache/tree/master/example)' directory within this repository.
 
 ## Authors
 Your Name
 Replace '[License Name]' and '[Your Name]' with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/shanav-tech/terraform-aws-elasticache/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Shanav-Technologies/terraform-aws-elasticache/blob/master/LICENSE) file for details.
 
 
 
@@ -178,46 +178,45 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.8.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.50.0 |
-| <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.6.0 |
-| <a name="requirement_tls"></a> [tls](#requirement\_tls) | >= 4.0.4 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 6.5.0 |
+| <a name="requirement_tls"></a> [tls](#requirement\_tls) | 4.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.50.0 |
-| <a name="provider_random"></a> [random](#provider\_random) | >= 3.6.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.5.0 |
+| <a name="provider_random"></a> [random](#provider\_random) | n/a |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/shanav-tech/terraform-aws-labels.git | v1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/Shanav-Technologies/terraform-aws-labels.git | v1.0.0 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [aws_cloudwatch_log_group.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
-| [aws_elasticache_cluster.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_cluster) | resource |
-| [aws_elasticache_replication_group.cluster](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_replication_group) | resource |
-| [aws_elasticache_subnet_group.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/elasticache_subnet_group) | resource |
-| [aws_kms_alias.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_alias) | resource |
-| [aws_kms_key.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_key) | resource |
-| [aws_route53_record.elasticache](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
-| [aws_route53_record.memcached_route_53](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_record) | resource |
-| [aws_security_group.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
-| [aws_security_group_rule.egress](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_security_group_rule.egress_ipv6](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_security_group_rule.ingress](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_ssm_parameter.memcached_secret-endpoint](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter) | resource |
-| [aws_ssm_parameter.secret](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter) | resource |
-| [aws_ssm_parameter.secret-endpoint](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ssm_parameter) | resource |
+| [aws_cloudwatch_log_group.default](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/cloudwatch_log_group) | resource |
+| [aws_elasticache_cluster.default](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/elasticache_cluster) | resource |
+| [aws_elasticache_replication_group.cluster](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/elasticache_replication_group) | resource |
+| [aws_elasticache_subnet_group.default](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/elasticache_subnet_group) | resource |
+| [aws_kms_alias.default](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/kms_alias) | resource |
+| [aws_kms_key.default](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/kms_key) | resource |
+| [aws_route53_record.elasticache](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/route53_record) | resource |
+| [aws_route53_record.memcached_route_53](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/route53_record) | resource |
+| [aws_security_group.default](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/security_group) | resource |
+| [aws_security_group_rule.egress](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.egress_ipv6](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.ingress](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/security_group_rule) | resource |
+| [aws_ssm_parameter.memcached_secret-endpoint](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/ssm_parameter) | resource |
+| [aws_ssm_parameter.secret](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/ssm_parameter) | resource |
+| [aws_ssm_parameter.secret-endpoint](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/ssm_parameter) | resource |
 | [random_password.auth_token](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
-| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
-| [aws_iam_policy_document.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
-| [aws_partition.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/partition) | data source |
+| [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/data-sources/caller_identity) | data source |
+| [aws_iam_policy_document.default](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/data-sources/iam_policy_document) | data source |
+| [aws_partition.current](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/data-sources/partition) | data source |
 
 ## Inputs
 
@@ -257,7 +256,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 | <a name="input_length"></a> [length](#input\_length) | n/a | `number` | `25` | no |
 | <a name="input_log_delivery_configuration"></a> [log\_delivery\_configuration](#input\_log\_delivery\_configuration) | The log\_delivery\_configuration block allows the streaming of Redis SLOWLOG or Redis Engine Log to CloudWatch Logs or Kinesis Data Firehose. Max of 2 blocks. | `list(map(any))` | `[]` | no |
 | <a name="input_maintenance_window"></a> [maintenance\_window](#input\_maintenance\_window) | Maintenance window. | `string` | `"sun:05:00-sun:06:00"` | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg  'shanav-tech'. | `string` | `"shanav-tech"` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg  'Shanav-Technologies'. | `string` | `"Shanav-Technologies"` | no |
 | <a name="input_memcached_route53_record_enabled"></a> [memcached\_route53\_record\_enabled](#input\_memcached\_route53\_record\_enabled) | Whether to create Route53 record memcached set. | `bool` | `false` | no |
 | <a name="input_memcached_ssm_parameter_endpoint_enabled"></a> [memcached\_ssm\_parameter\_endpoint\_enabled](#input\_memcached\_ssm\_parameter\_endpoint\_enabled) | Name of the parameter. | `bool` | `false` | no |
 | <a name="input_multi_az_enabled"></a> [multi\_az\_enabled](#input\_multi\_az\_enabled) | Specifies whether to enable Multi-AZ Support for the replication group. If true, automatic\_failover\_enabled must also be enabled. Defaults to false. | `bool` | `false` | no |

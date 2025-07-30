@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 module "vpc" {
-  source                              = "git::https://github.com/shanav-tech/terraform-aws-vpc.git?ref=v1.0.0"
+  source                              = "git::https://github.com/Shanav-Technologies/terraform-aws-vpc.git?ref=v1.0.0"
   name                                = "app"
   environment                         = "test"
   cidr_block                          = "10.0.0.0/16"
@@ -15,7 +15,7 @@ module "vpc" {
 }
 
 module "subnet" {
-  source             = "git::https://github.com/shanav-tech/terraform-aws-subnet.git?ref=v1.0.0"
+  source             = "git::https://github.com/Shanav-Technologies/terraform-aws-subnet.git?ref=v1.0.0"
   name               = "app"
   environment        = "test"
   availability_zones = ["us-east-1a", "us-east-1b", "us-east-1c"]
