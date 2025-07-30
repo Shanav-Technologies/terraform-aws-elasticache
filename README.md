@@ -179,6 +179,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.8.5 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | 6.5.0 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | 3.5.1 |
 | <a name="requirement_tls"></a> [tls](#requirement\_tls) | 4.1.0 |
 
 ## Providers
@@ -186,7 +187,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 | Name | Version |
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | 6.5.0 |
-| <a name="provider_random"></a> [random](#provider\_random) | n/a |
+| <a name="provider_random"></a> [random](#provider\_random) | 3.5.1 |
 
 ## Modules
 
@@ -213,7 +214,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 | [aws_ssm_parameter.memcached_secret-endpoint](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/ssm_parameter) | resource |
 | [aws_ssm_parameter.secret](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/ssm_parameter) | resource |
 | [aws_ssm_parameter.secret-endpoint](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/resources/ssm_parameter) | resource |
-| [random_password.auth_token](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
+| [random_password.auth_token](https://registry.terraform.io/providers/hashicorp/random/3.5.1/docs/resources/password) | resource |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/data-sources/caller_identity) | data source |
 | [aws_iam_policy_document.default](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/data-sources/iam_policy_document) | data source |
 | [aws_partition.current](https://registry.terraform.io/providers/hashicorp/aws/6.5.0/docs/data-sources/partition) | data source |
